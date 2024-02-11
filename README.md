@@ -89,3 +89,7 @@ update <class> <id> <attribute name> "<attribute value>"	Updates an object with 
 <class>.destroy(<ID>)	Same as destroy <class> <ID>
 <class>.update(<ID>, <attribute name>, <attribute value>	Same as update <class> <ID> <attribute name> <attribute value>
 <class>.update(<ID>, <dictionary representation>)	Updates an objects based on a dictionary representation of attribute names and values
+
+# Authors
+* Gloria Muthumbi 
+* Edwin Gachanja
