@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 def calculate_square(number):
     """Calculate the square of a given number."""
     return number ** 2
