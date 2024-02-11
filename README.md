@@ -1,7 +1,7 @@
 # AirBnB_clone
 ![Airbnb](https://github.com/Dikachis/AirBnB_clone/raw/main/web_static/images/65f4a1dd9c51265f49d0.png?raw=true)
 
-#Description
+## Description
 HolbertonBnB is a complete web application, integrating database storage, a back-end API, and front-end interfacing in a clone of AirBnB.
 his is the first step towards building your first full web application: the AirBnB clone. The aim of the project is to deploy a replica of the Airbnb Website using my server.
 
@@ -10,7 +10,7 @@ A website (front-end) with static and dynamic functionalities
 A comprehensive database to manage the backend functionalities
 An API that provides a communication interface between the front and backend of the system.
 
-#Resources
+## Resources
 Videos showing examples of how various parts of the project work, listed below:
 HBNB videos
 Holberton Airbnb overview
@@ -29,7 +29,7 @@ args/kwargs
 Python test cheatsheet
 AirBnB website.
 
-#Aims & Objectives of this project
+## Aims & Objectives of this project
 This will help to be able to manage the objects of our project:
 
 Creation of a new object (ex: a new "User" or a new "Place")
@@ -38,7 +38,7 @@ Perform operations on objects (count, compute stats, etc…)
 Update attributes of an object
 Destroy an object
 
-#The created objects
+## The created objects
 The list of the objects (instances) that can be created are as follows:
 
 BaseModel
@@ -49,7 +49,7 @@ State
 Review
 Place
 
-#Files and Directories
+## Files and Directories
 models directory contains all classes used for the entire project. A class, called “model” in a OOP project is the representation of an object/instance.
 tests directory contains all unit tests.
 console.py file is the entry point of our command interpreter.
@@ -59,7 +59,7 @@ methods: save() and to_json()
 models/engine directory contains all storage classes (using the same prototype). For the moment I will have only one: file_storage.py.
 The project's implementation will happen in the following phases:
 
-#Phase One
+## Phase One
 The first phase is to manipulate a powerful storage system to give an abstraction between objects and how they are stored and persisted. To achieve this, I will:
 
 put in place a parent class (called BaseModel) to take care of the initialization, serialization and deserialization of my future instances
@@ -71,7 +71,7 @@ Create a data model
 Manage (create, update, destroy, etc) objects via a console/command interpreter
 Store and persist objects to files (JSON files)
 
-#Commands Implemented
+## Commands Implemented
 Description of the command interpreter
 
 Commands	Description
