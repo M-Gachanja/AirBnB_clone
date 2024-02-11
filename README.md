@@ -32,10 +32,10 @@ AirBnB website.
 ## Aims & Objectives of this project
 This will help to be able to manage the objects of our project:
 
-> Creation of a new object (ex: a new "User" or a new "Place")
-> Retrieval of an object from a file storage, a database etc… 
-> Perform operations on objects (count, compute stats, etc…)
-> Update attributes of an object
+` Creation of a new object (ex: a new "User" or a new "Place") `
+` Retrieval of an object from a file storage, a database etc… `
+` Perform operations on objects (count, compute stats, etc…) `
+` Update attributes of an object `
 ` Destroy an object `
 
 ## The created objects
