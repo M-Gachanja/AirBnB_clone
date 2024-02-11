@@ -36,7 +36,7 @@ This will help to be able to manage the objects of our project:
 > Retrieval of an object from a file storage, a database etc… 
 > Perform operations on objects (count, compute stats, etc…)
 > Update attributes of an object
-> Destroy an object
+` Destroy an object `
 
 ## The created objects
 The list of the objects (instances) that can be created are as follows:
