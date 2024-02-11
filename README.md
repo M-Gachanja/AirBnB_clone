@@ -10,33 +10,14 @@ A website (front-end) with static and dynamic functionalities
 A comprehensive database to manage the backend functionalities
 An API that provides a communication interface between the front and backend of the system.
 
-## Resources
-Videos showing examples of how various parts of the project work, listed below:
-HBNB videos
-Holberton Airbnb overview
-The Airbnb Console
-Airbnb ORM
-Airbnb API
-Final product
-Other resource
-cmd module
-packages concept page
-Python packages
-uuid module
-datetime
-unittest module
-args/kwargs
-Python test cheatsheet
-AirBnB website.
-
 ## Aims & Objectives of this project
 This will help to be able to manage the objects of our project:
 
-` Creation of a new object (ex: a new "User" or a new "Place") ` \n
-` Retrieval of an object from a file storage, a database etc… `
-` Perform operations on objects (count, compute stats, etc…) `
-` Update attributes of an object `
-` Destroy an object `
+` Creation of a new object (ex: a new "User" or a new "Place") ``
+` Retrieval of an object from a file storage, a database etc… ``
+` Perform operations on objects (count, compute stats, etc…) ``
+` Update attributes of an object ``
+` Destroy an object ``
 
 ## The created objects
 The list of the objects (instances) that can be created are as follows:
