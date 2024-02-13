@@ -35,6 +35,15 @@ class BaseModel:
         """
         Returns a string representation of the BaseModel class instance
         """
+        ordered_attributes = [
+                "id", "created_at", "updated_at", "name", "my_number"
+                ]
+        attributes_str = ", ".join(
+                "{}={!r}".format(
+                    attr, getattr(
+                        self, attr)) for attr in ordered_attributes if hasattr(
+                            self, attr)
+                        )
         return "[{}] ({}) {}".format(
                 self.__class__.__name__, self.id, self.__dict__)
 
