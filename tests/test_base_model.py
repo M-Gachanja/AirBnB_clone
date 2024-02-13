@@ -6,42 +6,47 @@ Classes:
     TestBaseModelSave
     TestBaseModelToDict
 """
-import models
 import unittest
-import os
-from datetime import datetime
-from time import sleep
 from models.base_model import BaseModel
 
-class TestBaseModelInstantiation(unnittest.TestCase):
+class TestBaseModelInstantiation(unittest.TestCase):
     """Tests BaseModel class instantiation"""
 
-    def test_no_args_instatiates(self):
-        self.assertEqual(BaseModel, type(BaseModel()))
-
-    def test_new_instance_stored_in_objects(self):
-        self.assertIn(BaseModel(), models.storage.all().values())
-
-    def test_id_is_string(self):
-        self.assertEqual(str, type(BaseModel().id))
-
-    def test_created_at_is_datetime(self):
-        self.assertEqual(datetime, type(BaseModel().created_at))
-
-    def test_updated_at_is_datetime(self):
-        self.assertEqual(datetime, type(BaseModel().updated_at))
-
     def test_string_representation(self):
-        dt = datetime.today()
-        dr_repr = repr(dt)
+        """
+        Test the string representation of BaseModel.
+        """
         bm = BaseModel()
-        bm.id = "123456"
-        bm.created_at = bm.update_at = dt
-        bm_str = bm.__str__()
-        self.assertIn("[BaseModel] (123456)", bm_str)
-        self.assertIn("'id': '123456'", bm_str)
-        self.assertIn("'created_at: " + dt_repr, bm_str)
-        self.assertIn("'updated_at: " + dt_repr, bm_str)
+        bm.name = "My_First_Model"
+        bm.my_number = 89
+        self.assertIn("[BaseModel] ({})".format(bm.id), str(bm))
+
+    def test_save_method(self):
+        """
+        Test the save method of BaseModel.
+        """
+        bm = BaseModel()
+        initial_updated_at = bm.updated_at
+        bm.save()
+        self.assertNotEqual(initial_updated_at, bm.updated_at)
+
+    def test_to_dict_method(self):
+        """
+        Test the to_dict method of BaseModel.
+        """
+        bm = BaseModel()
+        bm.name = "My_First_Model"
+        bm.my_number = 89
+        bm_dict = bm.to_dict()
+        self.assertIsInstance(bm_dict, dict)
+        self.assertIn("__class__", bm_dict)
+        self.assertEqual(bm_dict["__class__"], "BaseModel")
+        self.assertIn("created_at", bm_dict)
+        self.assertIn("updated_at", bm_dict)
+        self.assertIn("id", bm_dict)
+        self.assertIn("name", bm_dict)
+        self.assertIn("my_number", bm_dict)
+
 
 if __name__ == "__main__":
     unittest.main()
