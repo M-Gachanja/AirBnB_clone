@@ -28,6 +28,9 @@ class TestBaseModelInstantiation(unnittest.TestCase):
     def test_created_at_is_datetime(self):
         self.assertEqual(datetime, type(BaseModel().created_at))
 
+    def test_updated_at_is_datetime(self):
+        self.assertEqual(datetime, type(BaseModel().updated_at))
+
     def test_string_representation(self):
         dt = datetime.today()
         dr_repr = repr(dt)
@@ -39,3 +42,6 @@ class TestBaseModelInstantiation(unnittest.TestCase):
         self.assertIn("'id': '123456'", bm_str)
         self.assertIn("'created_at: " + dt_repr, bm_str)
         self.assertIn("'updated_at: " + dt_repr, bm_str)
+
+if __name__ == "__main__":
+    unittest.main()
