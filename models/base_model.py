@@ -4,7 +4,8 @@ Module containing the BaseModel class.
 """
 
 from datetime import datetime
-import uuid
+from uuid import uuid4
+import models
 
 
 class BaseModel:
@@ -16,20 +17,18 @@ class BaseModel:
         """
         Initializes a new instance of the class
         """
+        timeformat = "%Y-%m-%dT%H:%M:%S.%f"
+        self.id = str(uuid4())
+        self.created_at = self.updated_at = datetime.today()
         if kwargs:
             for key, value in kwargs.items():
                 if key != "__class__":
                     if key in ["created_at", "updated_at"]:
-                        value = datetime.strptime(
-                                value, "%Y-%m-%dT%H:%M:%S.%f")
-                    setattr(self, key, value)
-            if not hasattr(self, 'id'):
-                self.id = str(uuid.uuid4())
-            if not hasattr(self, 'created_at'):
-                self.created_at = self.updated_at = datetime.now()
-        else:
-            self.id = str(uuid.uuid4())
-            self.created_at = self.updated_at = datetime.now()
+                        setattr(self, key, datetime.strptime(value, timeformat))
+                    else:
+                        setattr(self, key, value)
+                else:
+                    models.storage.new(self)
 
     def __str__(self):
         """
@@ -43,6 +42,7 @@ class BaseModel:
         Updates the public instance attr updated_at with current date/time
         """
         self.updated_at = datetime.now()
+        models.storage.save()
 
     def to_dict(self):
         """
